@@ -38,7 +38,7 @@ length_embed = math.soft_one_hot_linspace(
 )
 length_embed = length_embed.mul(num_bases**0.5)
 
-fc = nn.FullyConnectedNet([num_bases, length_embed.shape[1], tp.weight_numel], torch.relu)
+fc = nn.FullyConnectedNet([num_bases, 128, tp.weight_numel], torch.relu)
 
 opt = Adam(fc.parameters(), lr=1e-3)
 
